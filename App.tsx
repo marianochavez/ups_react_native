@@ -1,16 +1,25 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { TailwindProvider } from 'tailwind-rn';
+import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
 import utilities from './tailwind.json';
 import RootNavigator from './navigator/RootNavigator';
+
+const client = new ApolloClient({
+  // stepzen uri
+  uri: 'http://localhost:5001/api/moldy-numbat',
+  cache: new InMemoryCache(),
+});
 
 export default function App() {
   return (
     // @ts-ignore - TailwindProvider is missing a type definition
     <TailwindProvider utilities={utilities}>
-      <NavigationContainer>
-        <RootNavigator />
-      </NavigationContainer>
+      <ApolloProvider client={client}>
+        <NavigationContainer>
+          <RootNavigator />
+        </NavigationContainer>
+      </ApolloProvider>
     </TailwindProvider>
   );
 }

@@ -74,11 +74,6 @@
 			"paddingTop": 20
 		}
 	},
-	"pb-8": {
-		"style": {
-			"paddingBottom": 32
-		}
-	},
 	"pb-0": {
 		"style": {
 			"paddingBottom": 0
@@ -92,6 +87,16 @@
 	"capitalize": {
 		"style": {
 			"textTransform": "capitalize"
+		}
+	},
+	"italic": {
+		"style": {
+			"fontStyle": "italic"
+		}
+	},
+	"underline": {
+		"style": {
+			"textDecorationLine": "underline"
 		}
 	}
 }

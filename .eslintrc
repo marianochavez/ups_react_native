@@ -1,5 +1,6 @@
 {
   "extends": ["universe-error/native"],
+  "parser": "@babel/eslint-parser",
   "rules": {
     "prettier/prettier": "error",
     "flowtype/no-types-missing-file-annotation": 0

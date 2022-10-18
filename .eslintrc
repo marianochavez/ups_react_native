@@ -1,0 +1,7 @@
+{
+  "extends": ["universe-error/native"],
+  "rules": {
+    "prettier/prettier": "error",
+    "flowtype/no-types-missing-file-annotation": 0
+  }
+}

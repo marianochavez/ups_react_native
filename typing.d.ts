@@ -41,3 +41,7 @@ type Order = {
     Address: string;
     City: string;
 }
+
+declare module '@env' {
+    export const API_BACK_URL: string;
+}

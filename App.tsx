@@ -4,10 +4,11 @@ import { TailwindProvider } from 'tailwind-rn';
 import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
 import utilities from './tailwind.json';
 import RootNavigator from './navigator/RootNavigator';
+import {API_BACK_URL} from "@env";
 
 const client = new ApolloClient({
   // stepzen uri
-  uri: 'http://localhost:5001/api/moldy-numbat',
+  uri: API_BACK_URL,
   cache: new InMemoryCache(),
 });
 

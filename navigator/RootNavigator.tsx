@@ -9,7 +9,6 @@ export type RootStackParamList = {
 };
 
 const RootStack = createNativeStackNavigator();
-
 const RootNavigator = () => {
   return (
     <RootStack.Navigator>

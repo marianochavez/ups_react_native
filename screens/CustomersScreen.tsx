@@ -30,8 +30,8 @@ const CustomersScreen = () => {
   }, []);
 
   return (
-    <SafeAreaView>
-      <ScrollView style={{ backgroundColor: '#59C1CC', height: '100%' }}>
+    <SafeAreaView style={[tw('pb-5'), { backgroundColor: '#59C1CC' }]}>
+      <ScrollView>
         <Image
           source={{ uri: 'https://links.papareact.com/3jc' }}
           containerStyle={tw('w-full h-64')}

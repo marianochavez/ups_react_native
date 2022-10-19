@@ -18,7 +18,7 @@ const CustomerCard = ({ userId, email, name }: Props) => {
   const navigation = useNavigation<CustomerScreenNavigationProp>();
 
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => navigation.navigate('MyModal', { name, userId })}>
       <Card containerStyle={tw('p-5 rounded-lg')}>
         <View>
           <View style={tw('flex-row justify-between')}>
@@ -28,7 +28,9 @@ const CustomerCard = ({ userId, email, name }: Props) => {
             </View>
 
             <View style={tw('flex-row items-center justify-end')}>
-              <Text style={{color: '#59C1CC'}}>{loading ? 'loading...' : `${orders.length} x`}</Text>
+              <Text style={{ color: '#59C1CC' }}>
+                {loading ? 'loading...' : `${orders.length} x`}
+              </Text>
               <Icon style={tw('mb-5 ml-auto')} name="box" type="entypo" color="#59C1CC" size={50} />
             </View>
           </View>

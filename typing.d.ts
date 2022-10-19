@@ -43,5 +43,6 @@ type Order = {
 }
 
 declare module '@env' {
-    export const API_BACK_URL: string;
+    export const STEPZEN_API_URI: string;
+    export const STEPZEN_API_KEY: string;
 }

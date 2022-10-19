@@ -1,14 +1,27 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { TailwindProvider } from 'tailwind-rn';
-import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
+import { ApolloClient, createHttpLink, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 import utilities from './tailwind.json';
 import RootNavigator from './navigator/RootNavigator';
-import {API_BACK_URL} from "@env";
+import { STEPZEN_API_URI, STEPZEN_API_KEY } from '@env';
+
+const httpLink = createHttpLink({
+  uri: STEPZEN_API_URI,
+});
+
+const authLink = setContext((_, { headers }) => {
+  return {
+    headers: {
+      ...headers,
+      authorization: STEPZEN_API_KEY,
+    },
+  };
+});
 
 const client = new ApolloClient({
-  // stepzen uri
-  uri: API_BACK_URL,
+  link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
 
